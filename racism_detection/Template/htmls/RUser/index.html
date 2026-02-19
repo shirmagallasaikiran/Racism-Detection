@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Crete+Round:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Unbounded:wght@200..900&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Crete+Round:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Unbounded:wght@200..900&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Unbounded:wght@200..900&display=swap");
+
+  .bgimage {
+    margin-top: 13vh;
+    margin-left: 65vw;
+    min-height: 500px;
+    min-width: 500px;
+    background-image: url("{% static 'reverse-face-search.svg' %}");
+    background-position: 90%;
+    background-repeat: no-repeat;
+    position: fixed;
+  }
+
+
+      body{
+        user-select:none;
+      }
+      .section2 {
+        font-family: "Unbounded", sans-serif;
+      }
+      .upperbar {
+        z-index: 4;
+      }
+      .no-filter:hover .invert {
+        filter: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bgimage"></div>
+    <div class="w-full h-screen bg-[#010409] p-2">
+      <div class="section1 flex justify-center items-center">
+        <div
+          class="upperbar w-[80%] shadow-md shadow-slate-500 h-16 bg-gray-800 bg-opacity-100 rounded-full mt-4 flex justify-between items-center p-4"
+        >
+          <div>
+            <img
+              src="{% static 'scan.svg' %}"
+              class="w-10 h-10 text-white"
+              alt="Scan User"
+            />
+          </div>
+          <div class="font-bold flex items-center justify-center gap-4">
+            <a href="{% url 'login' %}">
+              <div
+              class="h-12 w-24 flex items-center justify-center rounded-full border-2 border-slate-200 bg-transparent text-white duration-200 hover:bg-slate-200 hover:text-black hover:scale-[105%]"
+            >
+              <h2>User</h2>
+            </div>
+            </a>
+            <a href="{% url 'serviceproviderlogin' %}">
+              <div
+              class="h-12 w-24 flex items-center justify-center rounded-full border-2 border-slate-200 bg-transparent text-white duration-200 hover:bg-slate-200 hover:text-black hover:scale-[105%]"
+            >
+              Remote
+            </div>
+            </a>
+            
+          </div>
+        </div>
+      </div>
+      <div class="section2 text-white mt-16 ml-16">
+        <p class="text-[56px] [text-shadow:_0_6px_4px_rgb(99_102_241_/_0.8)]">Racism Detection</p>       
+        <h2 class="text-[28px] [text-shadow:_0_4px_4px_rgb(99_102_241_/_0.8)]">by Analyzing Differential Opinions</h2>
+        <h4 class="text-[24px] [text-shadow:_0_4px_2px_rgb(99_102_241_/_0.8)]">Through Sentiment Analysis of Tweets</h4>
+        <a href="{% url 'login' %}">
+          <div
+              class="section2 h-12 mt-38 ml-2 w-140 flex items-center justify-center rounded-full border-2 border-slate-200 bg-transparent text-white duration-200 hover:bg-slate-200 ease-in hover:text-black hover:scale-[105%] no-filter"
+        >
+              Start Now
+              <span>
+                <img class="w-6 h-6 invert" src="{% static 'diagonal.svg'%}" alt="Diagonal" />
+              </span>
+        </div>
+        </a>
+      </div>
+  
+    </div>
+  </body>
+</html>

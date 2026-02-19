@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Crete+Round:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Unbounded:wght@200..900&display=swap");
+        @import url("https://fonts.googleapis.com/css2?family=Crete+Round:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Unbounded:wght@200..900&display=swap");
+        @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Unbounded:wght@200..900&display=swap");
+
+        body {
+            user-select: none;
+        }
+
+        .section2 {
+            font-family: "Unbounded", sans-serif;
+        }
+
+        .upperbar {
+            z-index: 4;
+        }
+
+        .no-filter:hover .invert {
+            filter: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="w-full h-screen bg-[#010409] p-2">
+        <div class="section1 flex justify-center items-center">
+            <div
+                class="upperbar w-[90%] max-w-5xl shadow-md shadow-slate-500 h-16 bg-gray-800 bg-opacity-100 rounded-full mt-4 flex justify-between items-center p-4">
+
+                <div>
+                    <img src="{% static 'scan.svg' %}" class="w-10 h-10 text-white" alt="Scan User" />
+                </div>
+                <div class="min-w-max font-bold flex items-center justify-between gap-6">
+                    <a href="{% url 'Predict_Sentiment_Analysis' %}">
+                        <div
+                            class="h-full min-w-max px-4 flex items-center justify-center bg-transparent text-white duration-100 hover:scale-[105%]">
+                            <h2>Predict Sentiment Analysis Type</h2>
+                        </div>
+                    </a>
+                    <a href="{% url 'ViewYourProfile' %}">
+                        <div
+                            class="h-full min-w-max px-4 flex items-center justify-center bg-transparent text-white duration-100 hover:scale-[105%]">
+                            View Your Profile
+                        </div>
+                    </a>
+                    <a href="{% url 'index' %}">
+                        <div
+                            class="h-full min-w-max px-4 flex items-center justify-center bg-transparent hover:text-red-400 text-white duration-100 hover:scale-[105%]">
+                            Logout
+                        </div>
+                    </a>
+                </div>
+
+
+            </div>
+        </div>
+        <div class="section2 text-white mt-8 flex justify-center">
+            <p class="mb-6 text-[46px] [text-shadow:_0_6px_4px_rgb(99_102_241_/_0.8)]">View user details</p>
+
+        </div>
+        <div class="relative overflow-x-auto w-[80%] mx-auto mt-4">
+            <table class="w-full text-sm text-left border border-gray-700">
+                <thead class="text-xs bg-gray-700 text-gray-300">
+                    <tr>
+                        <th class="px-4 py-2 border border-gray-700 dark:border-gray-600">Username</th>
+                        <th class="px-4 py-2 border border-gray-700 dark:border-gray-600">Email ID</th>
+                        <th class="px-4 py-2 border border-gray-700 dark:border-gray-600">Mobile Number</th>
+                        <th class="px-4 py-2 border border-gray-700 dark:border-gray-600">Gender</th>
+                        <th class="px-4 py-2 border border-gray-700 dark:border-gray-600">Address</th>
+                        <th class="px-4 py-2 border border-gray-700 dark:border-gray-600">Country</th>
+                        <th class="px-4 py-2 border border-gray-700 dark:border-gray-600">State</th>
+                        <th class="px-4 py-2 border border-gray-700 dark:border-gray-600">City</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="bg-gray-800 border border-gray-600 font-bold text-white">
+                        <td class="px-4 py-2 border border-gray-700 dark:border-gray-600">{{ object.username }}</td>
+                        <td class="px-4 py-2 border border-gray-700 dark:border-gray-600">{{ object.email }}</td>
+                        <td class="px-4 py-2 border border-gray-700 dark:border-gray-600">{{ object.phoneno }}</td>
+                        <td class="px-4 py-2 border border-gray-700 dark:border-gray-600">{{ object.gender }}</td>
+                        <td class="px-4 py-2 border border-gray-700 dark:border-gray-600">{{ object.address }}</td>
+                        <td class="px-4 py-2 border border-gray-700 dark:border-gray-600">{{ object.country }}</td>
+                        <td class="px-4 py-2 border border-gray-700 dark:border-gray-600">{{ object.state }}</td>
+                        <td class="px-4 py-2 border border-gray-700 dark:border-gray-600">{{ object.city }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+    </div>
+</body>
+
+</html>

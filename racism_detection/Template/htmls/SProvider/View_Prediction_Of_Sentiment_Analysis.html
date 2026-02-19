@@ -1,0 +1,119 @@
+{% extends 'SProvider/Header.html' %} {% block researchblock %}
+
+<link rel="icon" href="images/icon.png" type="image/x-icon" />
+
+<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" />
+<link
+  href="https://fonts.googleapis.com/css?family=Righteous"
+  rel="stylesheet"
+/>
+<link
+  href="https://fonts.googleapis.com/css?family=Fredoka+One"
+  rel="stylesheet"
+/>
+<script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+<style>
+  body {
+    background-color: #010409;
+    overflow-y: auto; /* Allow page to be scrollable */
+  }
+  .container-fluid {
+    padding: 50px;
+  }
+  .container {
+    background-color: transparent;
+    padding: 50px;
+  }
+  #title {
+    font-family: "Fredoka One", cursive;
+  }
+  .text-uppercase {
+    font-family: "Righteous", cursive;
+  }
+  .tweettext {
+    /* border: 2px solid yellowgreen; */
+    width: 1104px;
+    height: auto; /* Changed from fixed height to auto */
+    max-height: 842px; /* Added max-height to limit the height */ /* Hide vertical scrollbar */
+  }
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  .style1 {
+    color: #ffffff;
+    font-weight: bold;
+  }
+  .style12 {
+    color: #ffff00;
+    font-weight: bold;
+  }
+</style>
+
+<body>
+  <div class="container-fluid">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-5">
+          <form role="form" method="POST">
+            {% csrf_token %}
+            <fieldset>
+              <p class="text-uppercase text-center pull-center style1 mb-6">
+                View Sentiment Analysis Type Details !!!
+              </p>
+              <hr />
+              <div class="tweettext font-bold">
+                <div
+                  class="relative overflow-x-auto"
+                  style="width: 100%; margin: auto"
+                >
+                  <table
+                    class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-100 font-bold rounded-md"
+                  >
+                    <thead
+                      class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-100 text-center"
+                    >
+                      <tr>
+                        <th scope="col" class="px-6 py-3">tid</th>
+                        <th scope="col" class="px-6 py-3">tweet</th>
+                        <th scope="col" class="px-6 py-3">Prediction</th>
+                      </tr>
+                    </thead>
+                    <tbody class="font-bold style1">
+                      {% for object in list_objects %}
+                      <tr
+                        class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200"
+                      >
+                        <td
+                          class="px-6 py-4 font-bold text-gray-900 whitespace-nowrap dark:text-white"
+                        >
+                          {{object.tid}}
+                        </td>
+                        <td
+                          class="px-6 py-4 font-bold text-gray-900 whitespace-nowrap dark:text-white"
+                        >
+                          {{object.tweet}}
+                        </td>
+                        <td
+                          class="px-6 py-4 font-bold text-gray-900 whitespace-nowrap dark:text-white"
+                        >
+                          {{object.Prediction}}
+                        </td>
+                      </tr>
+                      {% endfor %}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </fieldset>
+          </form>
+        </div>
+
+        <div class="col-md-2">
+          <!-------null------>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endblock %}
+  <tr></tr>
+</body>
