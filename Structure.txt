@@ -1,0 +1,24 @@
+Racism Detection by Analyzing Differential Opinions Through Sentiment Analysis of Tweets Using Stacked Ensemble GCR-NN Model
+
+
+Racism, social media, online abuse, Twitter, deep learning.
+
+IEEE Access and Transaction on Machine Learning,Volume:10,Issue Date:18.January.2022
+
+
+Racism_Detection
+
+racism_detection
+
+
+
+Members
+---------
+
+tid
+tweet
+Prediction
+
+
+sentiment_analysis_type
+

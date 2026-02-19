@@ -1,0 +1,2 @@
+python -m ensurepip --default-pip
+python -m pip install setuptools
