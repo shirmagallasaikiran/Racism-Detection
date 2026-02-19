@@ -48,5 +48,5 @@ This project focuses on detecting racism-related sentiment in tweet data using *
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/Matamsathwik/Racism-Detection-through-Sentiment-Analysis-of-Tweet-data
-   cd Racism-Detection-through-Sentiment-Analysis-of-Tweet-data
+   git clone https://github.com/shirmagallasaikiran/Racism-Detection
+   cd Racism-Detection
